@@ -1,5 +1,11 @@
 コードの説明:
 
+python2.7
+tensorfllow-gpu=0.12.0-rc0
+
+
+
+
 
 　　choi_train.py 学習用なテクストファイルと学習パラメータをargumentで渡すと自動的に学習するプログラムである。
 学習データの形：
