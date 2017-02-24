@@ -36,25 +36,33 @@ choi_cross_valid.py の説明：
 	データの５等分に分けて、4等分で学習、１分でvalidationを5回行うプログラムである。
 ARGUMENTの説明：
 　  -h, --help            show this help message and exit
-  --filename FILENAME   input file: numpy txt tsv
-  --shuffle SHUFFLE     shuffles training data when argument is nonzero
-  --outputfile OUTPUTFILE
-                        output file's name : out.txt
-  --layer [LAYER [LAYER ...]]
-                        layers of NN : input_size,layers[i]... output_size
-  --activation [ACTIVATION [ACTIVATION ...]]
-                        activations between layers : size can't be smaller
-                        than number of the layers
-  --learningrate LEARNINGRATE
-                        learning rate : type float
-  --model_dir MODEL_DIR
-                        saves model to this directory
-  --max_epochs MAX_EPOCHS
-                        maximum number of epochs for each train
-  --batch_size BATCH_SIZE
-                        size of batch :
-  --label_size LABEL_SIZE
-                        size of label: equals to layer[-1]
-  --loss LOSS           type of loss : cross_entropy or sqrt	
-　
+  --filename   input filename: numpy txt tsv
+  --shuffle      shuffles training data when argument is nonzero
+  --outputfile   output file's name : out.txt
+  --layer    layers of NN : input_size,layers[i]... output_size
+  --activation 　 activations between layers : size can't be smaller
+ 			than number of the layers
+  --learningrate   learning rate : type float
+  --model_dir   saves model to this directory
+  --max_epochs   maximum number of epochs for each train
+  --batch_size    size of batch :
+  --label_size     size of label: equals to layer[-1]
+  --loss          type of loss : cross_entropy or sqrt	
+使い方：
+python choi_cross_valid.py --layer 432 100 50 20 8  --activation  relu relu relu sigmoid --batch_size 100 --learningrate 0.0001 --shuffle 1 --max_epochs 20 --filename train8.tsv
+
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filename FILENAME   input filename: txt,numpy,tsv
+  --shuffle SHUFFLE     shuffles data when argument nonzero
+  --layer  layers of model 
+  --activation   activations between layers type = array of string
+  --model_name  full path to saved model
+  --label_size      length of label type int
+
+使い方の例：
+python choi_predict.py --layer 223 200 100 20 8 --activation relu relu relu relu sigmoid --model_name ./models/new_model.ckpt
+
+
 
