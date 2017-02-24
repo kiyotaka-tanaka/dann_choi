@@ -24,7 +24,7 @@ ARGUMENTの説明：
   --activation    activations between layers: cannot be smaller than number  of  layers
   
   
-  --learningrate   learning rate type is float（学習列）
+  --learningrate   learning rate type is float（学習率）
   
   --model_name             model will be saved under this name（保存されるモデルの名前定義）
   
@@ -74,6 +74,7 @@ ARGUMENTの説明：
   --loss          type of loss : cross_entropy or sqrt	
   
 使い方：
+
 python choi_cross_valid.py --layer 432 100 50 20 8  --activation  relu relu relu sigmoid --batch_size 100 --learningrate 0.0001 --shuffle 1 --max_epochs 20 --filename train8.tsv
 
 choi_predict.pyの説明です。
